@@ -1,0 +1,9 @@
+<h1>{{(projectToDisplay | async)?.name}}</h1>
+
+<h4>Goal Amount: ${{(projectToDisplay | async)?.goal}}</h4><br>
+<h4>Managers: {{(projectToDisplay | async)?.managers}}</h4><br>
+<h4>Detail: {{(projectToDisplay | async)?.detail}}</h4><br>
+<h4>Incentive: {{(projectToDisplay | async)?.incentive}}</h4><br>
+<h4>Category: {{(projectToDisplay | async)?.category}}</h4><br>
+
+<img src="{{(projectToDisplay | async)?.image}}" alt="" />

@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-   providers: [ProjectService, DonatorService]
+  providers: [ProjectService, DonatorService]
 })
 
 export class HomeComponent implements OnInit {
@@ -30,6 +30,10 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.projects = this.projectService.getProjects()
     console.log(this.projectService)
+  }
+
+  goToProjectPage(clickedProject: Project) {
+    // this.router.navigate(['projects', clickedProject.$key])
   }
 
 }

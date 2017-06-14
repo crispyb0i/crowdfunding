@@ -1,1 +1,6 @@
- <h3 *ngFor="let project of projects | async" >{{project.name}}</h3>
+<div *ngFor="let project of projects | async" >
+  <h2>{{project.name}}</h2>
+  <h4>Project Goal: ${{project.goal}}</h4>
+  <a [routerLink]="['/project/' + project.$key]"><img src={{project.image}}></a>
+  <hr>
+</div>

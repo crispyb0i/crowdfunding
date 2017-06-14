@@ -1,0 +1,45 @@
+{ "projects": [{
+    "name": "Ultra Fidget Spinner",
+    "managers": "David Shin, Aaron Nguyen",
+    "detail": "Our revolutionary product will have you fidgeting for hours on end. This will be the most amazing thing you will ever purchase in your lifetime. DO IT!",
+    "incentive": "All backer who donates over $10 will receive an autographed Ultra Fidget Spinner with an Ultra Fidget Spinner holster.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/8185VFvp%2BRL._SY355_.jpg",
+    "category": "Business",
+    "goal": 30000
+  },{
+  "name": "Taco Bell Run",
+  "managers": "Jason Lazzuri",
+  "detail": "Starving student in need of 'nourishment'. Please feed.",
+  "incentive": "All backer who donate will be able to sleep at night knowing that I have been well fed.",
+  "image": "https://d29vij1s2h2tll.cloudfront.net/~/media/images/taco-bell/products/default/22850_specialties_chalupasupreme_300x300.jpg?w=300&h=300",
+  "category": "Wish",
+  "goal": 10
+  },
+  {
+  "name": "The Ultimate Twitch Channel",
+  "managers": "Loren Glenn",
+  "detail": "I want to start a twitch channel that consists purely of me and my IRL adventures. One day I can be grabbing boba from a Taiwanese restaurant and another day I can be skydiving from 20,000 feet in the air. It'll be dope y'all!",
+  "incentive": "All backers who donate will receive EXCLUSIVE emojis to post in my Twitch and Discord Channels.",
+  "image": "http://i3.kym-cdn.com/entries/icons/original/000/013/112/frankerz.png",
+  "category": "Creative",
+  "goal": 2000
+  }],
+  "donators": [{
+    "name": "Bryan Lin",
+    "amount": 100,
+    "projectID": 2,
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAh3AAAAJDJlZmIxODNmLWI3OTYtNGU0Ny1iMGVkLTEyMDgzYTRiZjg3ZA.jpg"
+    },
+    {
+    "name": "Ilene Gorski",
+    "amount": 5,
+    "projectID": 1,
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAeRAAAAJDVlMTM4N2Q0LWJjYjEtNDI3ZS04YmY5LWZkNzAzMWJlZDZhMQ.jpg"
+    },
+    {
+    "name": "Jonathon Kang",
+    "amount": 3,
+    "projectID": 0,
+    "image": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/00a/0f4/19b3fe4.jpg"
+    }]
+}

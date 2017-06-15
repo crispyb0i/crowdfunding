@@ -1,3 +1,50 @@
+<button *ngIf="!formHide"type="button" name="button" (click)="toggle()">New Project</button>
+<div *ngIf="formHide" class="form-group">
+  <h3>Add New Project</h3>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input #newName>
+  </div>
+
+  <div>
+    <label>Project Manager(s):</label>
+    <br>
+    <input #newManager>
+  </div>
+
+  <div>
+    <label>Project Detail:</label>
+    <br>
+    <textarea #newDetail></textarea>
+  </div>
+  <div>
+    <label>Project incentive:</label>
+    <br>
+    <textarea #newIncentive></textarea>
+  </div>
+  <div>
+    <label>Project Image URL:</label>
+    <br>
+    <input #newImage>
+  </div>
+  <div>
+    <label>Project Category:</label>
+    <br>
+    <select #newCategory>
+      <option value="Wish">Wish</option>
+      <option value="Business">Business</option>
+      <option value="Creative">Creative</option>
+    </select>
+  </div>
+  <div>
+    <label>Project Goal:</label>
+    <br>
+    <input #newGoal>
+  </div>
+  <button type="button" name="button" (click)="submitForm(newName.value, newManager.value, newDetail.value, newIncentive.value, newImage.value, newCategory.value, newGoal.value);newName.value='';newManager.value='';newDetail.value=''; newIncentive.value=''; newImage.value=''; newCategory.value=''; newGoal.value=''">Submit</button>
+</div>
+
 <div *ngFor="let project of projects | async" >
   <h2>{{project.name}}</h2>
   <h4>Project Goal: ${{project.goal}}</h4>

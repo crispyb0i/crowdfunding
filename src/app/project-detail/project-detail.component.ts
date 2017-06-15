@@ -16,6 +16,8 @@ import { Router } from '@angular/router';
 })
 export class ProjectDetailComponent implements OnInit {
 
+  // @Input() selectedProject;
+
   projectId: string;
   projectToDisplay;
 
@@ -25,8 +27,26 @@ export class ProjectDetailComponent implements OnInit {
    this.route.params.forEach((urlParameters) => {
     this.projectId = urlParameters['id'];
   });
-  this.projectToDisplay = this.projectService.getProjectById(this.projectId);
-  console.log(this.projectToDisplay,this.projectId)
+   this.projectService.getProjectById(this.projectId).subscribe(project => {
+     this.projectToDisplay = project;
+   });
+  console.log(this.projectToDisplay.$key,this.projectId)
  }
 
+ formHide=false;
+
+ toggle(){
+   this.formHide=!this.formHide
+ }
+
+ update() {
+  //  this.projectService.updateProject(this)
+   this.toggle()
+ }
+
+ delete(projectToDelete){
+    if(confirm("Are you sure you want to delete this item from the inventory?")){
+      this.projectService.deleteProject(projectToDelete);
+    }
+  }
 }

@@ -1,9 +1,59 @@
-<h1>{{(projectToDisplay | async)?.name}}</h1>
+<h1>{{(projectToDisplay)?.name}}</h1>
 
-<h4>Goal Amount: ${{(projectToDisplay | async)?.goal}}</h4><br>
-<h4>Managers: {{(projectToDisplay | async)?.managers}}</h4><br>
-<h4>Detail: {{(projectToDisplay | async)?.detail}}</h4><br>
-<h4>Incentive: {{(projectToDisplay | async)?.incentive}}</h4><br>
-<h4>Category: {{(projectToDisplay | async)?.category}}</h4><br>
+<h4>Goal Amount: ${{(projectToDisplay)?.goal}}</h4><br>
+<h4>Managers: {{(projectToDisplay)?.managers}}</h4><br>
+<h4>Detail: {{(projectToDisplay)?.detail}}</h4><br>
+<h4>Incentive: {{(projectToDisplay)?.incentive}}</h4><br>
+<h4>Category: {{(projectToDisplay)?.category}}</h4><br>
 
-<img src="{{(projectToDisplay | async)?.image}}" alt="" />
+<img src="{{(projectToDisplay)?.image}}" alt="" />
+<br>
+
+<button type="button" name="button" (click)="update()">Update</button>
+<button type="button" name="button" (click)="delete(projectToDisplay)">Delete</button>
+
+<div *ngIf="formHide" class="form-group">
+  <h3>Update Project</h3>
+  <div>
+    <label>Project Name:</label>
+    <br>
+    <input [(ngModel)]="projectToDisplay.name">
+  </div>
+
+  <div>
+    <label>Project Manager(s):</label>
+    <br>
+    <input [(ngModel)]="projectToDisplay.managers">
+  </div>
+
+  <div>
+    <label>Project Detail:</label>
+    <br>
+    <textarea [(ngModel)]="projectToDisplay.detail"></textarea>
+  </div>
+  <div>
+    <label>Project incentive:</label>
+    <br>
+    <textarea [(ngModel)]="projectToDisplay.incentive"></textarea>
+  </div>
+  <div>
+    <label>Project Image URL:</label>
+    <br>
+    <input [(ngModel)]="projectToDisplay.image">
+  </div>
+  <div>
+    <label>Project Category:</label>
+    <br>
+    <select [(ngModel)]="projectToDisplay.category">
+      <option value="Wish">Wish</option>
+      <option value="Business">Business</option>
+      <option value="Creative">Creative</option>
+    </select>
+  </div>
+  <div>
+    <label>Project Goal:</label>
+    <br>
+    <input [(ngModel)]="projectToDisplay.goal">
+  </div>
+  <button type="button" name="button" (click)="update()">Submit</button>
+</div>

@@ -29,11 +29,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.projects = this.projectService.getProjects()
-    console.log(this.projectService)
+
   }
+    formHide=false
 
   goToProjectPage(clickedProject: Project) {
     // this.router.navigate(['projects', clickedProject.$key])
   }
 
+  submitForm(name: string, managers: string, detail: string, incentive: string, image: string, category: string, goal: number){
+    var newProject: Project = new Project(name, managers, detail, incentive, image, category, goal);
+    this.projectService.addProject(newProject);
+    this.toggle();
+  }
+
+  toggle(){
+    this.formHide=!this.formHide
+  }
 }

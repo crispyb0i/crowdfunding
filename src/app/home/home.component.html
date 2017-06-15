@@ -1,3 +1,10 @@
+<select (change)="onChange($event.target.value)">
+  <option value="All" selected="selected">All Projects</option>
+  <option value="Business">Business</option>
+  <option value="Wish">Wish</option>
+  <option value="Creative">Creative</option>
+</select>
+
 <button *ngIf="!formHide"type="button" name="button" (click)="toggle()">New Project</button>
 <div *ngIf="formHide" class="form-group">
   <h3>Add New Project</h3>
@@ -45,7 +52,7 @@
   <button type="button" name="button" (click)="submitForm(newName.value, newManager.value, newDetail.value, newIncentive.value, newImage.value, newCategory.value, newGoal.value);newName.value='';newManager.value='';newDetail.value=''; newIncentive.value=''; newImage.value=''; newCategory.value=''; newGoal.value=''">Submit</button>
 </div>
 
-<div *ngFor="let project of projects | async" >
+<div *ngFor="let project of projects | async | category:filterByCategory" >
   <h2>{{project.name}}</h2>
   <h4>Project Goal: ${{project.goal}}</h4>
   <a [routerLink]="['/project/' + project.$key]"><img src={{project.image}}></a>

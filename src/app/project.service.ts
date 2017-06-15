@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Project } from './project.model';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Injectable()
 export class ProjectService {
   projects: FirebaseListObservable<any[]>;
 
-  constructor(private database: AngularFireDatabase) { this.projects = database.list('projects');
+  constructor(private route: ActivatedRoute, private router: Router, private database: AngularFireDatabase) { this.projects = database.list('projects');
 }
 
   getProjects(){
@@ -29,5 +31,6 @@ export class ProjectService {
   deleteProject(localProjectToDelete){
     var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
     projectEntryInFirebase.remove();
+    this.router.navigate([''])
   }
 }

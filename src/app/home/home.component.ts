@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
 
   }
     formHide=false
+    filterByCategory: string = "All Projects";
 
   goToProjectPage(clickedProject: Project) {
     // this.router.navigate(['projects', clickedProject.$key])
@@ -45,5 +46,9 @@ export class HomeComponent implements OnInit {
 
   toggle(){
     this.formHide=!this.formHide
+  }
+
+  onChange(optionFromMenu) {
+  this.filterByCategory = optionFromMenu;
   }
 }

@@ -30,7 +30,6 @@ export class ProjectDetailComponent implements OnInit {
    this.projectService.getProjectById(this.projectId).subscribe(project => {
      this.projectToDisplay = project;
    });
-  console.log(this.projectToDisplay.$key,this.projectId)
  }
 
  formHide=false;
